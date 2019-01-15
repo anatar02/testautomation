@@ -2,7 +2,7 @@ module.exports = function (browser) {
     this.openBrowser = function () {
       browser
         .windowMaximize()
-        .url('http://artsyjewels.com/')
+        .url('https://signup.socialtables.com/')
         .waitForElementVisible('body', 1000);
       return browser;
     };
@@ -11,6 +11,7 @@ module.exports = function (browser) {
       .click('.site-header__account')
       .waitForElementVisible('body', 1000);
     };
+    
     this.adminLogin = function () {
       
       browser
@@ -35,6 +36,36 @@ module.exports = function (browser) {
       .click('xpath', 'html/body/main/div/div/div/div[1]/form/div[2]/button');
       browser.pause(3000);
     };
+
+    this.navigateTo = function(){
+      browser
+        .windowMaximize()
+        .url('https://signup.socialtables.com/')
+        .waitForElementVisible('body', 1000);
+      return browser;
+    };
+
+    this.setLogin = function (tdUserName, tdPassword){
+      browser
+      .waitForElementVisible('#field-email', 1000)
+      .setValue('#field-email',tdUserName)
+      .setValue('#field-password',tdPassword)
+      .click('xpath', '//span[contains(text(),"Log In")]')
+      .pause(2000);
+    }
+    this.createNewEvent = function (){
+      browser
+      .click('xpath', '//button[contains(text(),"+ Create Event")]')
+      .setValue('#create-event__name','SampleEvent')
+      .click('#create-event__date--start')
+      .useXpath() // every selector now must be xpath
+      .click("//div[2]/div/table/tbody/tr/td[4]")
+      .useXpath() // every selector now must be xpath
+      .click("//div[3]/div/table/tbody/tr[2]/td[5]");
+      
+      
+    }
+
     return this;
   };
   

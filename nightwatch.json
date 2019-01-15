@@ -1,5 +1,5 @@
 {
-    "src_folders": ["tests"],
+    "src_folders": ["tests/socialTable"],
     "output_folder": "reports/XMLReports",
     "custom_commands_path": "",
     "custom_assertions_path": "",
@@ -13,8 +13,8 @@
       "port": 4444,
       "cli_args" : {
         "webdriver.chrome.driver": "lib/drivers/chromedriver",
-        "webdriver.gecko.driver": "lib/drivers/geckodriver.exe",
-        "webdriver.ie.driver" : "lib/drivers/IEDriverServer.exe"
+        "webdriver.gecko.driver": "lib/drivers/geckodriver",
+        "webdriver.ie.driver" : "lib/drivers/IEDriverServer"
       }        
     },
     "test_settings" : {
